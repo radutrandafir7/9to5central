@@ -1,0 +1,43 @@
+/* 9to5Central: brutal + clean */
+
+:root {
+  --bg: #000;
+  --text: #cfcfcf;
+  --muted: #9a9a9a;
+  --heading: #e5e5e5;
+  --link: #f5a623;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 60px 24px;
+  max-width: 760px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+h1 {
+  margin: 0 0 18px;
+  font-size: 44px;
+  line-height: 1.05;
+  color: var(--heading);
+}
+
+.meta { margin: 14px 0 22px; }
+.back { margin: 0 0 18px; }
+.back a { font-weight: 700; }
+
+.footer { margin-top: 34px; }
+.signature { margin-top: 22px; }
+.copy { margin-top: 10px; color: var(--muted); font-size: 12px; }
