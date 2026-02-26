@@ -7,6 +7,7 @@
   --muted: #8a8f98;
   --heading: #ffffff;
   --link: #ffa909;
+  --glow: rgba(255, 169, 9, 0.4);
 }
 
 * {
@@ -19,27 +20,92 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 100px 28px;
+  margin: 0 auto;
+  padding: 100px 48px;
   max-width: 760px;
 
   background: radial-gradient(circle at 20% 20%, var(--bg-soft) 0%, var(--bg) 60%);
   color: var(--text);
 
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: 'Noto Sans', system-ui, -apple-system, sans-serif;
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: -0.01em;
+
+  /* Noise texture overlay */
+  position: relative;
 }
 
-/* H1 – more composed */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1,
+.meta,
+ul,
+.signature,
+.copyright {
+  animation: fadeUp 0.6s ease both;
+}
+
+h1            { animation-delay: 0s; }
+.meta         { animation-delay: 0.08s; }
+ul            { animation-delay: 0.16s; }
+.signature    { animation-delay: 0.24s; }
+.copyright    { animation-delay: 0.32s; }
+
+/* H1 – gradient shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 h1 {
   margin: 0 0 24px;
-  font-size: clamp(34px, 4.5vw, 48px);
+  font-family: 'Noto Sans', sans-serif;
+  font-size: clamp(36px, 5vw, 52px);
   line-height: 1.1;
   font-weight: 900;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--heading);
+
+  background: linear-gradient(
+    90deg,
+    var(--heading) 0%,
+    var(--link) 25%,
+    var(--heading) 50%,
+    var(--link) 75%,
+    var(--heading) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite, fadeUp 0.6s ease both;
 }
 
 /* List reset */
@@ -53,9 +119,15 @@ li {
   margin: 18px 0;
   position: relative;
   padding-left: 18px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Modern micro-square bullet */
+/* Hover lift on list items */
+li:hover {
+  transform: translateX(6px);
+}
+
+/* Glowing micro-square bullet */
 li::before {
   content: "";
   position: absolute;
@@ -65,18 +137,40 @@ li::before {
   height: 6px;
   background: var(--link);
   border-radius: 1px;
+  box-shadow: 0 0 6px var(--glow), 0 0 12px var(--glow);
+  transition: box-shadow 0.25s ease;
 }
 
-/* Links */
+li:hover::before {
+  box-shadow: 0 0 8px var(--glow), 0 0 20px var(--glow);
+}
+
+/* Links – animated underline */
 a {
   color: var(--link);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--link);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 a:hover {
-  opacity: 0.7;
+  color: #ffbf40;
 }
 
 .meta {
