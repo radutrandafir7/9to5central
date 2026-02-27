@@ -6,7 +6,8 @@
   <title>9to5Central</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,13 +20,99 @@
   </p>
 </div>
 
-  <ul>
-    <li><a href="https://www.primly.io" target="_blank" rel="noopener">Primly</a></li>
-    <li><a href="https://murmursynth.com" target="_blank" rel="noopener">Murmur Synth</a></li>
-    <li><a href="https://clarityengine.cc" target="_blank" rel="noopener">Clarity Engine</a></li>
-    <li><a href="/hotpotato">Hot Potato</a></li>
-    <li><a href="https://9to5cards.com" target="_blank" rel="noopener">9to5Cards</a></li>
-  </ul>
+  <div class="projects">
+
+    <a href="https://www.primly.io" target="_blank" rel="noopener" class="project-card">
+      <div class="project-img">
+        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="100" class="wave-bg"/>
+          <path d="M0,60 C40,15 80,85 140,35 C200,-10 260,70 300,25 L300,100 L0,100Z" class="wave-1"/>
+          <path d="M0,75 C50,50 110,90 170,60 C230,30 270,75 300,55 L300,100 L0,100Z" class="wave-2"/>
+          <path d="M0,88 C80,75 160,95 240,80 C270,74 290,88 300,85 L300,100 L0,100Z" class="wave-3"/>
+        </svg>
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <span class="project-name">Primly</span>
+          <span class="material-symbols-outlined project-arrow">east</span>
+        </div>
+        <span class="project-desc">Behavioral Interview and Resume Writer AI Assistant</span>
+      </div>
+    </a>
+
+    <a href="https://murmursynth.com" target="_blank" rel="noopener" class="project-card">
+      <div class="project-img">
+        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="100" class="wave-bg"/>
+          <path d="M0,30 C100,70 150,10 200,55 C250,90 280,20 300,50 L300,100 L0,100Z" class="wave-1"/>
+          <path d="M0,58 C60,80 140,42 210,68 C260,82 285,55 300,65 L300,100 L0,100Z" class="wave-2"/>
+          <path d="M0,82 C50,90 120,76 200,88 C250,92 280,82 300,86 L300,100 L0,100Z" class="wave-3"/>
+        </svg>
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <span class="project-name">Murmur Synth</span>
+          <span class="material-symbols-outlined project-arrow">east</span>
+        </div>
+        <span class="project-desc">Semantic Wavetable Engine</span>
+      </div>
+    </a>
+
+    <a href="https://clarityengine.cc" target="_blank" rel="noopener" class="project-card">
+      <div class="project-img">
+        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="100" class="wave-bg"/>
+          <path d="M0,70 C75,25 150,65 225,20 C262,0 285,40 300,15 L300,100 L0,100Z" class="wave-1"/>
+          <path d="M0,80 C60,60 130,85 200,55 C250,35 280,65 300,48 L300,100 L0,100Z" class="wave-2"/>
+          <path d="M0,90 C90,80 180,94 250,84 C275,80 290,90 300,87 L300,100 L0,100Z" class="wave-3"/>
+        </svg>
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <span class="project-name">Clarity Engine</span>
+          <span class="material-symbols-outlined project-arrow">east</span>
+        </div>
+        <span class="project-desc">Business decisions backed by real outcomes</span>
+      </div>
+    </a>
+
+    <a href="/hotpotato" class="project-card">
+      <div class="project-img">
+        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="100" class="wave-bg"/>
+          <path d="M0,45 C30,70 70,15 120,55 C170,90 220,20 270,60 C285,70 295,45 300,50 L300,100 L0,100Z" class="wave-1"/>
+          <path d="M0,65 C40,50 90,80 150,55 C210,30 250,70 300,52 L300,100 L0,100Z" class="wave-2"/>
+          <path d="M0,80 C70,90 130,75 200,85 C245,90 275,78 300,82 L300,100 L0,100Z" class="wave-3"/>
+        </svg>
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <span class="project-name">Hot Potato</span>
+          <span class="material-symbols-outlined project-arrow">east</span>
+        </div>
+        <span class="project-desc">Multiplayer Cross-Platform Mobile Game</span>
+      </div>
+    </a>
+
+    <a href="https://9to5cards.com" target="_blank" rel="noopener" class="project-card">
+      <div class="project-img">
+        <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="100" class="wave-bg"/>
+          <path d="M0,55 C20,30 60,75 100,25 C140,-10 180,60 220,30 C260,5 290,50 300,35 L300,100 L0,100Z" class="wave-1"/>
+          <path d="M0,72 C45,55 95,82 145,58 C195,38 245,72 300,55 L300,100 L0,100Z" class="wave-2"/>
+          <path d="M0,86 C60,78 120,92 180,82 C240,74 270,88 300,84 L300,100 L0,100Z" class="wave-3"/>
+        </svg>
+      </div>
+      <div class="project-info">
+        <div class="project-header">
+          <span class="project-name">9to5Cards</span>
+          <span class="material-symbols-outlined project-arrow">east</span>
+        </div>
+        <span class="project-desc">Card Decks for Interview Prep and Well-being</span>
+      </div>
+    </a>
+
+  </div>
 
 <p class="meta">
   Reach out anytime. We reply. —
