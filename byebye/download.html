@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Byebye</title>
+  <meta name="description" content="Download Byebye — understand the true cost of owning things.">
+  <meta property="og:title" content="Download Byebye">
+  <meta property="og:description" content="The real cost of things. Made visible. Free on iOS and Android.">
+  <script>
+    (function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /android/i.test(ua);
+
+      if (isIOS) {
+        window.location.replace('https://apps.apple.com/app/id6761500284');
+      } else if (isAndroid) {
+        window.location.replace('https://play.google.com/store/apps/details?id=apps.by9to5central.byebye');
+      }
+      // Desktop users stay on this page and see both links
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .store-links { display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+    .store-link { display: inline-block; padding: 14px 28px; border-radius: 12px; background: #111; color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; transition: opacity 0.2s; }
+    .store-link:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <p class="back"><a href="/byebye">&larr; Back</a></p>
+
+  <h1>Download Byebye</h1>
+  <div class="meta">The real cost of things. Made visible.</div>
+
+  <p>Free on iOS and Android. No ads, no data selling.</p>
+
+  <div class="store-links">
+    <a href="https://apps.apple.com/app/id6761500284" class="store-link">App Store</a>
+    <a href="https://play.google.com/store/apps/details?id=apps.by9to5central.byebye" class="store-link">Google Play</a>
+  </div>
+
+  <p class="copyright" style="margin-top: 48px;">
+    &copy; <span id="year"></span> 9to5Central. All rights reserved.
+  </p>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
